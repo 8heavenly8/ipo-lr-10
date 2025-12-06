@@ -27,13 +27,27 @@ if len(list) != 0:
 #задание 3
 
 def isCollisionRect(list1, list2):
-    for i in range(2):#ДОДЕЛАТЬ ФУНКЦИЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮ
-        if(list1[0][0] > list2[1][0] or list1[0][1] > list2[1][1] or list1[0][1]<list2[])
+    x1_left, y1_bottom = list1[0]
+    x1_right, y1_top = list1[1]
+
+    x2_left, y2_bottom = list2[0]
+    x2_right, y2_top = list2[1]
+
+    if x1_left >= x2_right or x1_right <= x2_left:
+        return False
+
+    if y1_bottom >= y2_top or y1_top <= y2_bottom:
+        return False
+
+    return True
+
+
 
 
 list1 = []
 list2 = []
 list_result = []
+
 print("координаты для первого прямооугольника")
 for i in range(2):
     print(f"\nВведите координаты для точки {i + 1}:")
@@ -61,7 +75,7 @@ for i in range(2):
     except ValueError:
         print(f"Ошибка ввода! Координаты должны быть числами.")
         break
-
+correct = True
 
 for i in range(2):
     break
@@ -70,6 +84,6 @@ for i in range(2):
         correct = False
     else:
         correct = True
-correct = True
+print(list1,list2)
 if correct == True:
     print(isCollisionRect(list1,list2))
