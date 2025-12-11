@@ -140,8 +140,8 @@ def create_rectangle(list1, list2):
     return list1,list2
 
 list1, list2 = create_rectangle(list1, list2)
-rectangle = [list1, list2]
-print(rectangle)
+rectangles = [list1, list2]
+print(len(rectangles))
 correct = True
 
 
@@ -154,5 +154,6 @@ else:
 
 
 
-def intersectionAreaMultiRect():
-    pass
+def intersectionAreaMultiRect(rectangles):
+    
+    
